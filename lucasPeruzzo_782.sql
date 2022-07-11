@@ -1,17 +1,9 @@
 /*
-PROJETO - MÓDULO BANCO DE DADOS
-BANCO DE DADOS - LETS CODE
-
-Neste projeto, vamos desenvolver as tabelas
-para um banco de dados da Lets Code onde teremos 
-tabelas sobre as turmas, alunos e notas e frequências.
-Resolva os exercícios abaixo conforme as instruções
+PROJETO BANCO DE DADOS
 */
 
 /*
-EXERCICIO 1
-Crie 3 tabelas para este banco de dados, sendo elas:
-
+Criar as seguintes tabelas:
 - alunos
 Variáveis:
 	- aluno_id
@@ -82,8 +74,7 @@ create table notas_freq (
 );
 
 /*
-EXERCICIO 2
-Preencha as tabelas com os seguintes dados:
+Preencher as tabelas com os seguintes dados:
 */
 insert into alunos (aluno_id, nome_aluno, idade, bolsista, mensalidade)
 values
@@ -200,9 +191,7 @@ values
 	(0007, 0002, 0044, 60, 9, 9.5, 10, 94);
 	
 /*
-EXERCICIO 3
-
-Calcule a média do NPS dos professores (arredondado para duas casas),
+Calcular a média do NPS dos professores (arredondado para duas casas),
 ignorando as notas nulas e ordenando da maior média para a menor;
 */
 select
@@ -214,8 +203,7 @@ group by turmas.nome_professor
 order by media_nps desc;
 
 /*
-EXERCICIO 4
-Calcule a média final de cada um dos alunos de cada turma, sendo a média
+Calcular a média final de cada um dos alunos de cada turma, sendo a média
 calculada da seguinte forma: 0.3 * projeto1 + 0.3 * projeto2 + 0.4 * prova
 */
 select
@@ -229,8 +217,7 @@ group by turmas.turma_id,alunos.aluno_id, media_final
 order by turmas.turma_id, media_final desc;
 
 /*
-EXERCICIO 5
-Conte a quantidade de alunos que seriam reprovados por turma, sendo o criterio de reprovação
+Contar a quantidade de alunos que seriam reprovados por turma, sendo o criterio de reprovação
 que a nota final (calculada no exercício anterior) seja menor 7 ou que a frequencia seja menor
 que 70%. Ordene da turma com mais reprovados para a com menos
 */
@@ -248,8 +235,7 @@ order by qtdade_reprovados desc
 
 
 /*
-EXERCICIO 6
-Conte a quantidade de bolsista matriculados por turma
+Contar a quantidade de bolsista matriculados por turma
 */
 select 
 	turmas.nome_turma,
@@ -262,8 +248,7 @@ group by turmas.turma_id
 order by turmas.turma_id
 
 /*
-EXERCICIO 7
-Calcule a média de idade por turma (arredonda para 1 casa) e também a maior idade por turma
+Calcular a média de idade por turma (arredonda para 1 casa) e também a maior idade por turma
 */
 select 
 	turmas.nome_turma,
@@ -276,8 +261,7 @@ group by turmas.turma_id
 order by turmas.turma_id
 
 /*
-EXERCICIO 8
-Calcule o total faturado por turma, sendo o total faturado o valor
+Calcular o total faturado por turma, sendo o total faturado o valor
 da mensalidade paga pelos alunos, Faça esse calculo agrupado por
 turma_id e nome_turma
 */
@@ -307,8 +291,7 @@ group by turmas.nome_turma
 order by turmas.nome_turma
 
 /*
-EXERCICIO 9
-Calcule quanto cada um dos professores receberam por turma.
+Calcular quanto cada um dos professores receberam por turma.
 O salário do professor é 5% do total das mensalidades * carga horário do curso
 
 Dica: Você irá utilizar algo como AVG(carga_horaria) * SUM(0.05 * mensalidade)
@@ -326,7 +309,6 @@ order by turmas.nome_professor, turma_id
 
 
 /*
-EXERCICIO 10
 Utilizando a variável dias_semana, que representa os dias que aconteciam as aulas,
 calcule a quantidade de alunos por dias_semana ordenando da maior para a menor 
 quantidade;
